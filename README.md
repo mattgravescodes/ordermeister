@@ -53,23 +53,23 @@ I thought of a few AWS deployment options, each with their respective pros & con
 
 ### Future work (If I Had More Time)
 
-1. **TypeORM + PostgreSQL**
+1. **TypeORM + PostgreSQL:**
     My original intention was to setup a local DB connection (PostgreSQL) & have env variables for AWS deployment, but I ran out of time (moving Wife to Colorado for Vet School + full time gig deadlines). The Order Entity I setup coudl be refactored into a TypeORM entity pretty easily. Then it's a matter of extending the AppModule with typeORM & db credz. Caching strategies would enter the field after that, no doubt. [This Doc](https://docs.nestjs.com/techniques/database) was the guide I had planned to use. 
-2. **More robust Error handling**
+2. **More robust Error handling:**
     NestJS has some great Error handling out of the box, but I would have loved to add more granular Errors. As a service scales, more Error types & messages tend to crop up. I would have enjoyed digging further into Nest's [Exception Filters](https://docs.nestjs.com/exception-filters).
-3. **Global Logger**
+3. **Global Logger:**
    Nest comes with a [text-based logger](https://docs.nestjs.com/techniques/logger). I would have included some thoughtful logging (can definitely go overboard with this). Logs combined with DataDog (see next point) make for a powerful combo. 
-4. **Observability (DataDog)**
+4. **Observability (DataDog):**
    Observability across the stack would be really nice. RUM sessions tied to APM traces so I can debug & optimize (waterfall, resource timings, etc).
-5. **nestjs/swagger Documentation**
+5. **nestjs/swagger Documentation:**
    I found [this article](https://docs.nestjs.com/openapi/introduction). The more I read the Nest docs, the more I like it. Would definitley want to include some documentation swagger if I had more time.
-6. **E2E tests using Playwright & Jest**
+6. **E2E tests using Playwright & Jest:**
    My dream for this (& one of the reasons I set it up as a turborepo) was to have a single test suite (Playwright) shared across the stack. Playwright can output reports (with **Videos!**) & has expanded to include [api testing](https://playwright.dev/docs/api-testing). They support typescript, as well.
-7. **Load testing (K6)**
+7. **Load testing (K6):**
    With the "millions of orders" requirement, I figured some Load Testing *might* be useful. In this serverless, infinitely scalable cloud world we live in, I've mostly seen Load Testing blow up in DevOps faces (boss wants to know why the AWS bill is through the roof), but I'll throw it in anyway.
-8. **Authentication**
+8. **Authentication:**
    Would love to try out some Auth libraries with this. I figure not just *anyone* should have access to all of the orders in Westeros!
-9.  **Better Organized Folders**
+9.  **Better Organized Folders:**
    It's likely fine, but I'm always trying to better organize my directories & files. Given more time, I would have made everything nice, semantic, & repeatable (meaning - more turbo file/directory generator commands).
-10. **More Front End functionality**
+10. **More Front End functionality:**
    As mentioned above, I did not get very far on the front end portion. It's really just a glorified list. Given more time, I would have utilized the ui package & finished the basic CRUD abilities (likely using `react-hook-form` + `axios` against the api in a series of modals). I've been working with `react-email` lately, as well. Would have been fun to setup some emails for order confirmation & send them using `resend`!
